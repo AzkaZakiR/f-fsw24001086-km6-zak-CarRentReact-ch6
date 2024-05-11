@@ -102,22 +102,21 @@ export const SearchCar = () => {
                 </div>
 
             </div>
-            <div class="result mt-5" id="result">
-                <div class="grid grid-cols-1 lg:grid-cols-3 justify-center" id="cars-container"> No cars found</div>
-                <div className="grid grid-cols-1 lg:grid-cols-3 justify-center" id="cars-container">
+            <div className="result mt-5" id="result">
+                <div className="grid grid-cols-1 lg:grid-cols-3 justify-center gap-4" id="cars-container">
                     {cars.map((car) => (
-                        <div key={car.id} className="card">
-                            <img src={car.image.slice(1)} alt={car.model} className="w-full h-auto" />
+                        <div key={car.id} className="card mx-auto">
+                            <img src={`img/cars${car.image.slice(8)}`} alt={car.model} className="w-full h-auto" />
                             <div className="card-body">
                                 <h3 className="text-lg font-semibold">{car.model}</h3>
                                 <p>{car.manufacture}</p>
                                 <p>Plate: {car.plate}</p>
-                                {/* Add more details as needed */}
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
+
         </div>
 
 

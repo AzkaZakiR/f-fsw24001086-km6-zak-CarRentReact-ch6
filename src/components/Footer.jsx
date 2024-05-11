@@ -27,11 +27,11 @@ const Footer = () => {
                     <ul className="flex flex-col">
                         <li className="mb-2"><a href="#" className="text-muted">Connect With us</a></li>
                         <ul className="flex list-none mb-4">
-                            <li className="ms-2"><a className="text-dark" href="#"><img src="./Asset/icon_facebook.png" alt="" /></a></li>
-                            <li className="ms-2"><a className="text-dark" href="#"><img src="./Asset/icon_instagram.png" alt="" /></a></li>
-                            <li className="ms-2"><a className="text-dark" href="#"><img src="./Asset/icon_instagram.png" alt="" /></a></li>
-                            <li className="ms-2"><a className="text-dark" href="#"><img src="./Asset/icon_mail.png" alt="" /></a></li>
-                            <li className="ms-2"><a className="text-dark" href="#"><img src="./Asset/icon_twitch.png" alt="" /></a></li>
+                            <li className="ms-2"><a className="text-dark" href="#"><img src="img/svg/icon_facebook.svg" alt="" /></a></li>
+                            <li className="ms-2"><a className="text-dark" href="#"><img src="img/svg/icon_instagram.svg" alt="" /></a></li>
+                            <li className="ms-2"><a className="text-dark" href="#"><img src="img/svg/icon_instagram.svg" alt="" /></a></li>
+                            <li className="ms-2"><a className="text-dark" href="#"><img src="img/svg/icon_mail.svg" alt="" /></a></li>
+                            <li className="ms-2"><a className="text-dark" href="#"><img src="img/svg/icon_twitch.svg" alt="" /></a></li>
                         </ul>
                     </ul>
                 </div>
