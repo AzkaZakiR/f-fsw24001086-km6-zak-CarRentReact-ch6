@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import { getCars } from "../layouts/sendCar";
 
 export const SearchCar = () => {
+    // preventDefault();
+
     const [driver, setDriver] = useState("");
     const [tanggal, setTanggal] = useState("");
     const [waktu, setWaktu] = useState("");
     const [penumpang, setPenumpang] = useState("");
-    const [car, setCar] = useState("");
-    const [error, setError] = useState("");
+    const [cars, setCars] = useState([]);
+    const [error, setError] = useState([]);
     const [loading, setLoading] = useState(false);
 
     const handleDriverChange = (event) => {
@@ -26,21 +28,21 @@ export const SearchCar = () => {
         setPenumpang(event.target.value);
     };
 
+    let filteredCars;
     const handleSearch = async () => {
-        if (driver === "" || tanggal === "" || waktu === "" || penumpang === "") {
-
+        if (driver === "" || tanggal === "" || waktu === "") {
             setError("Semua kolom harus diisi.");
             console.log("Semua kolom harus diisi.");
+            alert("Semua kolom harus diisi")
             return;
         }
-
-        setError("");
+        console.log("Semua kolom harus diisi.");
         setLoading(true);
         try {
             const searchData = { driver, tanggal, waktu, penumpang };
-            const filteredCars = await getCars(searchData);
+            filteredCars = await getCars(searchData);
             console.log("Masuk filter")
-            setCar(filteredCars);
+            setCars(filteredCars);
         } catch (error) {
             setError("Terjadi kesalahan saat mencari mobil.");
         }
@@ -48,10 +50,10 @@ export const SearchCar = () => {
     };
 
     useEffect(() => {
-        if (car !== "") {
-            console.log("Filtered Cars:", car);
+        if (cars !== "") {
+            console.log("Filtered Cars:", cars);
         }
-    }, [car]);
+    }, [cars]);
 
     console.log("Value" + driver, tanggal, waktu, penumpang)
     return (
@@ -93,7 +95,7 @@ export const SearchCar = () => {
                                         </span>
                                     </div>
                                 </div>
-                                <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 mt-3 rounded" id="search" disabled onClick={handleSearch}>Cari Mobil</button>
+                                <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 mt-3 rounded" id="search" onClick={handleSearch}>Cari Mobil</button>
                             </div>
                         </div>
                     </div>
@@ -102,6 +104,19 @@ export const SearchCar = () => {
             </div>
             <div class="result mt-5" id="result">
                 <div class="grid grid-cols-1 lg:grid-cols-3 justify-center" id="cars-container"> No cars found</div>
+                <div className="grid grid-cols-1 lg:grid-cols-3 justify-center" id="cars-container">
+                    {cars.map((car) => (
+                        <div key={car.id} className="card">
+                            <img src={car.image.slice(1)} alt={car.model} className="w-full h-auto" />
+                            <div className="card-body">
+                                <h3 className="text-lg font-semibold">{car.model}</h3>
+                                <p>{car.manufacture}</p>
+                                <p>Plate: {car.plate}</p>
+                                {/* Add more details as needed */}
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
 
