@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Hitung from './Component/hitung';
+import Hitung from './components/hitung';
 import reportWebVitals from './reportWebVitals';
-import Tampilan from './layouts/utama'; 
+import Tampilan from './layouts/utama';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

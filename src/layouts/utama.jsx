@@ -1,20 +1,13 @@
 import React from 'react';
-import MainLayout from "../Component/mainLayout";
-import Button from "../Component/button";
+import MainLayout from "../components/mainLayout";
+import Button from "../components/button";
+import Home from '../components/home';
+import Services from '../components/services';
 
 const Tampilan = () => (
     <MainLayout>
-        <Button variant="primary">
-            Click
-        </Button>
-
-        <Button variant="secondary">
-            Click
-        </Button>
-
-        <Button variant="black">
-            Click
-        </Button>
+        <Home />
+        <Services />
     </MainLayout>
 );
 
