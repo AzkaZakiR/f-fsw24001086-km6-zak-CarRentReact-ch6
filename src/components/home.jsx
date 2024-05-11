@@ -2,7 +2,7 @@ import React from "react";
 
 const Home = () => {
     return (
-        <div className="beda">
+        <div className="bg-slate-200">
             <header className="p-3 justify-center">
                 <div className="container mx-auto ">
                     <div className="flex justify-between items-center">
