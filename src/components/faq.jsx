@@ -8,7 +8,7 @@ const Faq = () => {
     };
 
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto mt-10">
             <div className="flex flex-col lg:flex-row">
                 <div className="lg:w-2/5">
                     <h2 className="sub-title font-semibold text-4xl">Frequently Asked Questions</h2>
@@ -51,15 +51,15 @@ const faqItems = [
     },
     {
         question: "Berapa hari sebelumnya sabaiknya booking sewa mobil?",
-        answer: "..."
+        answer: "Minimal sebelumnya sabaiknya booking sewa"
     },
     {
         question: "Apakah Ada biaya antar-jemput?",
-        answer: "..."
+        answer: "Ada biaya antar jemput"
     },
     {
         question: "Bagaimana jika terjadi kecelakaan?",
-        answer: "..."
+        answer: "Ada asuransi"
     },
 ];
 
